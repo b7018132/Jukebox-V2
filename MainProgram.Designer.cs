@@ -35,6 +35,7 @@
             this.PlayList1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox_Genre_List
@@ -103,6 +104,16 @@
             this.label1.Text = "Copyright © 2018 Ed Bee";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(262, 613);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 41);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -112,6 +123,7 @@
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.jukebox4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(737, 858);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayList1);
@@ -136,6 +148,7 @@
         private System.Windows.Forms.ListBox PlayList1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
