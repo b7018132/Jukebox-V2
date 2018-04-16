@@ -46,7 +46,21 @@ namespace WindowsFormsApp3
         private void button2_Click(object sender, EventArgs e)
         {
             string applicationPath = Directory.GetCurrentDirectory() + "\\";
-            listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath + "test2.txt");
+            listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath + textBox1.Text + ".txt");
+            
+            
+            
+            
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = textBox1.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox3.Text;
         }
     }
 }
