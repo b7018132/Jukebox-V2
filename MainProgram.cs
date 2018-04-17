@@ -20,7 +20,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        bool JukeBoxOn = false;
+        
 
 
 
