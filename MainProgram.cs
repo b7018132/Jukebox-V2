@@ -110,11 +110,24 @@ namespace WindowsFormsApp3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             if (textBox2.Text == "" && PlayList1.Items.Count > 0)
             {
                 timer1.Start();
                 textBox2.Text = PlayList1.Items[0].ToString();
+                timer1.Stop();
             }
+
+            WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
+            string applicationPathMusic = Directory.GetCurrentDirectory() + "\\";
+
+
+            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text);
+
+
+            Player.controls.play();
+
+            
         }
     }
                 
