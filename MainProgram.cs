@@ -11,7 +11,7 @@ using System.IO;
 
 namespace WindowsFormsApp3
 {
-    
+
 
     public partial class Form1 : Form
     {
@@ -20,13 +20,13 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        bool JukeBoxOn;
-        
+        bool JukeBoxOn = false;
+
 
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "") 
+            if (textBox2.Text == "")
             {
                 textBox2.Text = PlayList1.Items[0].ToString();
             }
@@ -39,7 +39,7 @@ namespace WindowsFormsApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,24 +49,24 @@ namespace WindowsFormsApp3
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-          
+
 
 
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -77,8 +77,8 @@ namespace WindowsFormsApp3
         private void button2_Click_1(object sender, EventArgs e)
         {
             string applicationPath = Directory.GetCurrentDirectory() + "//" + "genreSongs.txt";
-            
-            
+
+
             listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath);
 
 
@@ -90,9 +90,10 @@ namespace WindowsFormsApp3
             WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
             string applicationPathMusic = Directory.GetCurrentDirectory() + "\\";
 
-            Player.URL = applicationPathMusic + "Sleep Away.mp3";
 
-            
+            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text);
+
+
             Player.controls.play();
 
         }
@@ -104,15 +105,17 @@ namespace WindowsFormsApp3
 
         private void PlayList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBox2.Text == "" && PlayList1.Items.Count > 0)
             {
+                timer1.Start();
                 textBox2.Text = PlayList1.Items[0].ToString();
             }
         }
     }
+                
 }
