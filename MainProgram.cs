@@ -26,72 +26,32 @@ namespace WindowsFormsApp3
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBox2.Text == "") //if the textbox is empty..
             {
-                textBox2.Text = PlayList1.Items[0].ToString();
+                textBox2.Text = PlayList1.Items[0].ToString(); //move it to the first item of the playlist listbox
             }
         }
 
-        private void btn_About_Click(object sender, EventArgs e)
-        {
-            new aboutForm().Show();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new Form2().Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string applicationPath = Directory.GetCurrentDirectory() + "//" + "genreSongs.txt";
+            string applicationPath = Directory.GetCurrentDirectory() + "//" + "genreSongs.txt"; //when the button is clicked, it will create the application path to the genre songs file
 
 
-            listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath);
+            listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath); //it will then read all the lines in the file and put it into the listbox
 
 
-            string applicationPath2 = Directory.GetCurrentDirectory() + "//" + "genreTitles.txt";
+            string applicationPath2 = Directory.GetCurrentDirectory() + "//" + "genreTitles.txt"; //when the button is clicked, it will create the application path to the genre title file
 
 
-            textBox1.Text = File.ReadAllText(applicationPath2);
+            textBox1.Text = File.ReadAllText(applicationPath2); //what ever is in this file, will be put into the textbox as the genre title
 
-            WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
-            string applicationPathMusic = Directory.GetCurrentDirectory() + "\\";
+            WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer(); //enabling the windows media player
+            string applicationPathMusic = Directory.GetCurrentDirectory() + "\\"; //the path to the music is here
 
 
-            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text);
+            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text); //the URL is dependent on what track is currently in the now playing text box
 
 
             Player.controls.play();
@@ -100,7 +60,7 @@ namespace WindowsFormsApp3
 
         private void listBox_Genre_List_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PlayList1.Items.Add(listBox_Genre_List.SelectedItem);
+            PlayList1.Items.Add(listBox_Genre_List.SelectedItem); //what ever is selected in the genre listbox, will be copied to the playlist listbox
         }
 
         private void PlayList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,13 +68,13 @@ namespace WindowsFormsApp3
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) //setting up a timer
         {
             
-            if (textBox2.Text == "" && PlayList1.Items.Count > 0)
+            if (textBox2.Text == "" && PlayList1.Items.Count > 0) //if the textbox is empty and there are more than one items in the playlist listbox..
             {
-                timer1.Start();
-                textBox2.Text = PlayList1.Items[0].ToString();
+                timer1.Start(); //starting of the timer
+                textBox2.Text = PlayList1.Items[0].ToString(); //the text of the currently playing textbox is the first item of the playlist 
                 timer1.Stop();
             }
 

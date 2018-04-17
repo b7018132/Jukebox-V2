@@ -62,7 +62,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(285, 26);
             this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // textBox2
             // 
@@ -82,7 +82,7 @@
             this.btn_About.TabIndex = 4;
             this.btn_About.Text = "About";
             this.btn_About.UseVisualStyleBackColor = true;
-            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
+            
             // 
             // PlayList1
             // 
@@ -102,7 +102,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Setup";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+           
             // 
             // label1
             // 
@@ -113,7 +113,7 @@
             this.label1.Size = new System.Drawing.Size(188, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Copyright © 2018 Ed Bee";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // Add
             // 
@@ -170,7 +170,7 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+      
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
