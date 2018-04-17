@@ -11,12 +11,18 @@ using System.IO;
 
 namespace WindowsFormsApp3
 {
+    
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
         }
+
+        bool JukeBoxOn;
+        
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -77,6 +83,21 @@ namespace WindowsFormsApp3
 
 
             textBox1.Text = File.ReadAllText(applicationPath2);
+
+            WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
+
+            Player.URL = "C:/Users/Ed/Downloads/Assignment 2 My Juke Box (1)/Assignment 2 My Juke Box/Tracks/Sleep Away.mp3";
+            Player.controls.play();
+
+        }
+
+        private void listBox_Genre_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PlayList1.Items.Add(listBox_Genre_List.SelectedItem);
+        }
+
+        private void PlayList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
         }
     }

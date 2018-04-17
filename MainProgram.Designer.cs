@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox_Genre_List = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox_Genre_List
@@ -47,6 +50,7 @@
             this.listBox_Genre_List.Name = "listBox_Genre_List";
             this.listBox_Genre_List.Size = new System.Drawing.Size(285, 104);
             this.listBox_Genre_List.TabIndex = 1;
+            this.listBox_Genre_List.SelectedIndexChanged += new System.EventHandler(this.listBox_Genre_List_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -83,6 +87,7 @@
             this.PlayList1.Name = "PlayList1";
             this.PlayList1.Size = new System.Drawing.Size(283, 144);
             this.PlayList1.TabIndex = 5;
+            this.PlayList1.SelectedIndexChanged += new System.EventHandler(this.PlayList1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -107,13 +112,22 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 187);
+            this.button2.Location = new System.Drawing.Point(289, 182);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 30);
+            this.button2.Size = new System.Drawing.Size(126, 35);
             this.button2.TabIndex = 8;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(258, 118);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(203, 46);
+            this.axWindowsMediaPlayer1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -124,6 +138,7 @@
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.jukebox4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(737, 858);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -136,6 +151,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +166,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 
