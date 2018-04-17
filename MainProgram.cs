@@ -67,9 +67,16 @@ namespace WindowsFormsApp3
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string applicationPath = "C:/Users/Ed/Documents/visual studio jukebox/genreSongs.txt";
+            string applicationPath = Directory.GetCurrentDirectory() + "//" + "genreSongs.txt";
+            
+            
             listBox_Genre_List.DataSource = File.ReadAllLines(applicationPath);
 
+
+            string applicationPath2 = Directory.GetCurrentDirectory() + "//" + "genreTitles.txt";
+
+
+            textBox1.Text = File.ReadAllText(applicationPath2);
             
         }
     }
