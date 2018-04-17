@@ -37,9 +37,10 @@
             this.PlayList1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,8 +57,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 245);
+            this.textBox1.Location = new System.Drawing.Point(214, 234);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(285, 26);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -67,6 +69,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.textBox2.Location = new System.Drawing.Point(215, 385);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(285, 26);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -112,15 +115,15 @@
             this.label1.Text = "Copyright © 2018 Ed Bee";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button2
+            // Add
             // 
-            this.button2.Location = new System.Drawing.Point(289, 182);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 35);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.Add.Location = new System.Drawing.Point(292, 190);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(126, 35);
+            this.Add.TabIndex = 8;
+            this.Add.Text = "ADD";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -130,12 +133,20 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(203, 46);
             this.axWindowsMediaPlayer1.TabIndex = 9;
+            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(218, 345);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(281, 24);
+            this.hScrollBar1.TabIndex = 10;
             // 
             // Form1
             // 
@@ -146,8 +157,9 @@
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.jukebox4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(737, 858);
+            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayList1);
@@ -173,9 +185,10 @@
         private System.Windows.Forms.ListBox PlayList1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Add;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }
 
