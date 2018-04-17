@@ -82,7 +82,7 @@ namespace WindowsFormsApp3
             string applicationPathMusic = Directory.GetCurrentDirectory() + "\\";
 
 
-            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text);
+            Player.URL = (applicationPathMusic + "//Tracks/" + textBox2.Text); //new pathway to the music is dependent on what is currently playing 
 
 
             Player.controls.play();
