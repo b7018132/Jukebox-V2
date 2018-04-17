@@ -26,7 +26,10 @@ namespace WindowsFormsApp3
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox2.Text == "") 
+            {
+                textBox2.Text = PlayList1.Items[0].ToString();
+            }
         }
 
         private void btn_About_Click(object sender, EventArgs e)
@@ -85,8 +88,11 @@ namespace WindowsFormsApp3
             textBox1.Text = File.ReadAllText(applicationPath2);
 
             WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
+            string applicationPathMusic = Directory.GetCurrentDirectory() + "\\";
 
-            Player.URL = "C:/Users/Ed/Downloads/Assignment 2 My Juke Box (1)/Assignment 2 My Juke Box/Tracks/Sleep Away.mp3";
+            Player.URL = applicationPathMusic + "Sleep Away.mp3";
+
+            
             Player.controls.play();
 
         }
@@ -99,6 +105,14 @@ namespace WindowsFormsApp3
         private void PlayList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = PlayList1.Items[0].ToString();
+            }
         }
     }
 }
